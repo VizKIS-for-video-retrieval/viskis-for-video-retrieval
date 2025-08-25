@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/ico" href="favicon.ico">
+
+    <title>Ordering Visualizer</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/main.css">
+
+    <!-- JS Scripts -->
+    
+   
+</head>
+
+<body style="overflow: hidden;">
+    <!-- Loading screen -->
+    <div id="loading-screen">
+        <div class="spinner-border text-primary mb-3" role="status"></div> <!-- Loading icon -->
+        <div>Loading images...</div>
+    </div>
+
+    <!-- Start of test overlay -->
+    <div id="start-overlay">
+        <h1>Image Finding Test</h1>
+        <div class='startOfTest'>
+            <p>
+            <div class="highlightText">Welcome!</div> In this test, your task is to find a specific target image from a
+            series of image sets. Please read the instructions below on how to navigate and complete this test.</p>
+            <h2>
+                <div class="highlightText">Instructions:</div>
+            </h2>
+            <video id="instructional-video" controls>
+                <source src="src/instructional_video.mp4" type="video/mp4">
+                Your browser could not display the instructional video.
+            </video>
+            <ol>
+                <li>
+                    <div class="highlightText">Target Image:</div> The target image is displayed before each set of
+                    images is shown. You can also view the target image anytime by clicking the <div
+                        class="highlightText">Toggle Target Image</div> button located at the top left of the screen.
+                </li>
+                <li>
+                    <div class="highlightText">Comparing Images:</div> If you want to directly compare an image in the
+                    set to the target image, click on the image you want to compare the target to.
+                </li>
+                <li>
+                    <div class="highlightText">Submitting an Image:</div> After locating the image corresponding to the
+                    target image, click the green <div class="highlightText">Submit</div> button on the image to make
+                    your selection. If your choice is incorrect, you'll have a chance to try again!
+                </li>
+                <li>
+                    <div class="highlightText">Progress:</div> You can track your progress on the bar at the top of the
+                    screen, which includes all control buttons and shows your position within the test.
+                </li>
+                <li>
+                    <div class="highlightText">Skipping an Image Set:</div> If you get stuck finding the image, you may
+                    use a <div class="highlightText">Skip</div> button that will appear in the top right after 30
+                    seconds to allow you to move forward. (It's possible for target image to not be in the set.)
+                </li>
+            </ol>
+            <h2>
+                <div class="highlightText">Additional Information:</div>
+            </h2>
+            <ul>
+                <li>Note that each image set may take a few seconds to load.</li>
+                <li>
+                    <div class="highlightText">Data collection:</div> Your scroll position and button clicks will be
+                    tracked, but all data is collected anonymously.
+                </li>
+            </ul>
+        </div> <button id="start-btn" type="button" class="btn btn-primary start-btn">Begin the Test</button>
+    </div>
+
+    <!-- End of test overlay -->
+    <div id="end-overlay"></div>
+
+    <!-- Submit result overlay -->
+    <div id="result-overlay"></div>
+
+    <!-- Image comparison overlay -->
+    <div id="image-compare"></div>
+
+    <!-- Target image overlay -->
+    <div id="targetImageDiv"></div>
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand navbar-light fixed-top">
+        <div class="navbar-nav">
+            <div class="nav-item" id="solutionButton">
+                <div class="form-check">
+                    <input id="solution-button" class="form-check-input" type="checkbox" id="cursorCheckbox">
+                    <label class="form-check-label fw-bold" for="cursorCheckbox">Show solution</label>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button id="target-button" type="button" class="btn btn-primary">Toggle Target
+                    Image</button>
+            </div>
+            <div class="nav-item">
+                <button id="instruction-button" type="button" class="btn btn-primary">Show Instructions</button>
+            </div>
+
+            <div class="nav-item">
+                <span class="navbar-text fw-bold">
+                    Progress: <span id="progress">0/X</span>
+                </span>
+            </div>
+            <div class="nav-item">
+                <span class="navbar-text fw-bold">
+                    Total incorrect submissions: <span id="incorrect-submissions">0</span>
+                </span>
+            </div>
+            <div class="nav-item" id="newUserButton">
+                <button id="new-user-button" type="button" class="btn btn-primary">Start over (new
+                    user)</button>
+            </div>
+            <div class="nav-item" id="skipButton">
+                <button id="current-iteration-button" type="button" class="btn btn-secondary ml-2 shining">Image not in list</button>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Blank side panel -->
+    <div id="sidePanel"></div>
+
+    <!-- Image grid container -->
+    <div id="imageGrid"></div>
+
+    <script type="module" src="src/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+fastapi[all]==0.114.2
+numpy
+matplotlib
+scipy
+lapx
+uvicorn==0.30.6
+
