@@ -45,28 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
         firstRunLoad();
     });
 
-    //initialize toggle button
-    const toggle_button = document.querySelector("#solution-button");
-    toggle_button.addEventListener("click", () => {
-        toggleSolutionDisplay();
-    });
-
-    //initialize target button
-    const target_button = document.querySelector("#target-button");
-    target_button.addEventListener("click", () => {
-        toggleTargetButton();
-    });
-
     //initialize instructions button
     const instruction_button = document.querySelector("#instruction-button");
     instruction_button.addEventListener("click", () => {
         showInstructionsButton();
-    });
-
-    //initialize user button
-    const new_user_button = document.querySelector("#new-user-button");
-    new_user_button.addEventListener("click", () => {
-        startWithNewUser();
     });
 
     //initialize skip button
