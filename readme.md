@@ -18,6 +18,11 @@ Our application is fully Dockerized to enable a ready-to-use study environment b
 6. The application is now served at: http://localhost:5173/
 7. All data produced is stored in backend/CollectedData, including scroll data, target overlays, and submissions
 
+
+## Evaluation
+
+Our study tool automatically stores all interactions in the backend/CollectedData folder. We provide a basic example on how to read the data into python in "read_logging_data.ipynb".
+
 ## Pre-Computed Grids
 
 We furthermore provide pre-computed grids in the "grids" folder. In total, we employed 35 collections and 7 layouts, leading to 245 (collection,layout) pairs. For reproducibility, we share the exact arrangement of images on the grid. We share the .txt files necessary to reproduce the grids and provide .png thumbnails of the grids.
