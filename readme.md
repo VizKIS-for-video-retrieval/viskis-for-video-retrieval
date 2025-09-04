@@ -2,6 +2,10 @@
 
 This repository contains code for the submission "Evaluating Keyframe Layouts for Visual Known-Item Search in Homogeneous Collections". We publish code for the study application in the folder "application", and publish pre-computed layouts for all (collection, layout) pairs. 
 
+<div align="center">
+  <img width="100%" alt="Visual Known-Item Search Task example" src="example_kis.gif">
+</div>
+
 ## Setup
 
 Our application is fully Dockerized to enable a reproducible study environment beyond our work. We describe the setup below:
