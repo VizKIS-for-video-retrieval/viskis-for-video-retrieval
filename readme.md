@@ -8,7 +8,7 @@ This repository contains code for the submission "Evaluating Keyframe Layouts fo
 
 ## Setup
 
-Our application is fully Dockerized to enable a reproducible study environment beyond our work. We describe the setup below:
+Our application is fully Dockerized to enable a ready-to-use study environment beyond our work. We describe the setup below:
 
 1. Download Docker, e.g., from https://www.docker.com/products/docker-desktop/
 2. Run Docker
